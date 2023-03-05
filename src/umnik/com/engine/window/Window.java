@@ -5,6 +5,7 @@ import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.system.MemoryStack;
+import umnik.com.engine.render.Render;
 
 import java.nio.IntBuffer;
 
@@ -31,10 +32,15 @@ public class Window {
     private int width;
     private int height;
     private String title;
+    private Render render = null;
     private long id;
 
     public Window(String title) {
         this.title = title;
+    }
+
+    public void addRender(Render render) {
+        this.render = render;
     }
 
     @Description(
@@ -49,11 +55,10 @@ public class Window {
         this.alpha = alpha;
     }
 
-    public void run()
-    {
-        GL.createCapabilities();
-        glClearColor(red, green, blue, alpha);
-        whileWindowNotShouldClose();
+    public void close() {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glfwSwapBuffers(id);
+        glfwPollEvents();
         glfwFreeCallbacks(id);
         glfwDestroyWindow(id);
         glfwTerminate();
@@ -61,14 +66,9 @@ public class Window {
     }
 
     //loops until the window is closed
-    private void whileWindowNotShouldClose()
+    public boolean isShouldClose()
     {
-        while ( !glfwWindowShouldClose(id) )
-        {
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            glfwSwapBuffers(id);
-            glfwPollEvents();
-        }
+        return glfwWindowShouldClose(id);
     }
 
     public void create()
@@ -83,6 +83,8 @@ public class Window {
         if ( id == 0 )
             throw new RuntimeException("Failed to create the GLFW window");
         init();
+        GL.createCapabilities();
+        glClearColor(red, green, blue, alpha);
     }
 
     public void setSize(int width, int height)
@@ -103,6 +105,11 @@ public class Window {
         this.y = y;
     }
 
+    public void update() {
+        glfwPollEvents();
+        glfwSwapBuffers(id);
+    }
+
     private void init()
     {
         GLFWVidMode vidmode = glfwGetVideoMode(glfwGetPrimaryMonitor());
@@ -113,6 +120,7 @@ public class Window {
         assert vidmode != null;
         initPos(vidmode,pWidth,pHeight);
         glfwGetWindowSize(id, pWidth, pHeight);
+        glfwSetWindowAspectRatio(this.id, this.width, this.height);
         glfwMakeContextCurrent(id);
         glfwShowWindow(id);
     }
