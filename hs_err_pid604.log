@@ -1,0 +1,260 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff0ba3c48a, pid=604, tid=0x0000000000000b10
+#
+# JRE version: OpenJDK Runtime Environment (8.0_342-b07) (build 1.8.0_342-b07)
+# Java VM: OpenJDK 64-Bit Server VM (25.342-b07 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [lwjgl_opengl.dll+0xc48a]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/corretto/corretto-8/issues/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002108f128800):  JavaThread "main" [_thread_in_native, id=2832, stack(0x000000ceb5b00000,0x000000ceb5c00000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000060
+
+Registers:
+RAX=0x00000210a5861930, RBX=0x00000210a3a290c8, RCX=0x0000000000004100, RDX=0x0000000000000000
+RSP=0x000000ceb5bff478, RBP=0x000000ceb5bff4e8, RSI=0x0000000000000880, RDI=0x0000021090ac80bd
+R8 =0x0000000000004100, R9 =0x000002108f112d70, R10=0x0000021090ad9622, R11=0x0000000052eb5f40
+R12=0x0000000000000000, R13=0x00000210a3a290c0, R14=0x000000ceb5bff508, R15=0x000002108f128800
+RIP=0x00007fff0ba3c48a, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000ceb5bff478)
+0x000000ceb5bff478:   0000021090ad964e 000002108f128800
+0x000000ceb5bff488:   00000210a3a290c8 0000000000000880
+0x000000ceb5bff498:   000002108f128800 0000021090ad9302
+0x000000ceb5bff4a8:   000000ceb5bff4a8 00000210a3a290c0
+0x000000ceb5bff4b8:   000000ceb5bff508 00000210a3a3b4f8
+0x000000ceb5bff4c8:   0000000000000000 00000210a3a290c8
+0x000000ceb5bff4d8:   0000000000000000 000000ceb5bff508
+0x000000ceb5bff4e8:   000000ceb5bff550 0000021090ac80bd
+0x000000ceb5bff4f8:   00000000e06d2980 0000021090ad2ab8
+0x000000ceb5bff508:   0000000000004100 000000ceb5bff510
+0x000000ceb5bff518:   00000210a3a23d9b 000000ceb5bff560
+0x000000ceb5bff528:   00000210a3a24fb0 0000000000000000
+0x000000ceb5bff538:   00000210a3a23dc0 000000ceb5bff508
+0x000000ceb5bff548:   000000ceb5bff560 000000ceb5bff5a8
+0x000000ceb5bff558:   0000021090ac80bd 00000000e069e5c8
+0x000000ceb5bff568:   000000ceb5bff568 00000210a3a25a3e 
+
+Instructions: (pc=0x00007fff0ba3c48a)
+0x00007fff0ba3c46a:   8b 50 18 49 ff 62 48 cc cc cc cc cc cc cc cc cc
+0x00007fff0ba3c47a:   cc cc cc cc cc cc 48 8b 01 41 8b c8 48 8b 50 18
+0x00007fff0ba3c48a:   48 ff 62 60 cc cc 48 8b 01 0f 28 cb f3 0f 10 5c
+0x00007fff0ba3c49a:   24 30 0f 28 c2 f3 0f 10 54 24 28 48 8b 48 18 48 
+
+
+Register to memory mapping:
+
+RAX=0x00000210a5861930 is an unknown value
+RBX={method} {0x00000210a3a290d0} 'glClear' '(I)V' in 'org/lwjgl/opengl/GL11C'
+RCX=0x0000000000004100 is an unknown value
+RDX=0x0000000000000000 is an unknown value
+RSP=0x000000ceb5bff478 is pointing into the stack for thread: 0x000002108f128800
+RBP=0x000000ceb5bff4e8 is pointing into the stack for thread: 0x000002108f128800
+RSI=0x0000000000000880 is an unknown value
+RDI=0x0000021090ac80bd is at code_begin+2301 in an Interpreter codelet
+invoke return entry points  [0x0000021090ac77c0, 0x0000021090ac81a0]  2528 bytes
+R8 =0x0000000000004100 is an unknown value
+R9 =0x000002108f112d70 is an unknown value
+R10=0x0000021090ad9622 is at code_begin+962 in an Interpreter codelet
+method entry point (kind = native)  [0x0000021090ad9260, 0x0000021090ad9d00]  2720 bytes
+R11=0x0000000052eb5f40 is an unknown value
+R12=0x0000000000000000 is an unknown value
+R13=0x00000210a3a290c0 is pointing into metadata
+R14=0x000000ceb5bff508 is pointing into the stack for thread: 0x000002108f128800
+R15=0x000002108f128800 is a thread
+
+
+Stack: [0x000000ceb5b00000,0x000000ceb5c00000],  sp=0x000000ceb5bff478,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [lwjgl_opengl.dll+0xc48a]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.lwjgl.opengl.GL11C.glClear(I)V+0
+j  umnik.com.engine.window.Window.close()V+3
+j  SomeThread.run()V+22
+j  Main.main([Ljava/lang/String;)V+37
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000210a54da000 JavaThread "Service Thread" daemon [_thread_blocked, id=6528, stack(0x000000ceb6900000,0x000000ceb6a00000)]
+  0x00000210a5447000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=4052, stack(0x000000ceb6800000,0x000000ceb6900000)]
+  0x00000210a543a000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=1660, stack(0x000000ceb6700000,0x000000ceb6800000)]
+  0x00000210a5437800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=2300, stack(0x000000ceb6600000,0x000000ceb6700000)]
+  0x00000210a542b800 JavaThread "Monitor Ctrl-Break" daemon [_thread_in_native, id=4492, stack(0x000000ceb6500000,0x000000ceb6600000)]
+  0x00000210a4681800 JavaThread "Attach Listener" daemon [_thread_blocked, id=6320, stack(0x000000ceb6400000,0x000000ceb6500000)]
+  0x00000210a4690800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4852, stack(0x000000ceb6300000,0x000000ceb6400000)]
+  0x00000210a4654000 JavaThread "Finalizer" daemon [_thread_blocked, id=1732, stack(0x000000ceb6200000,0x000000ceb6300000)]
+  0x00000210a464f000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6588, stack(0x000000ceb6100000,0x000000ceb6200000)]
+=>0x000002108f128800 JavaThread "main" [_thread_in_native, id=2832, stack(0x000000ceb5b00000,0x000000ceb5c00000)]
+
+Other Threads:
+  0x00000210a4623000 VMThread [stack: 0x000000ceb6000000,0x000000ceb6100000] [id=3912]
+  0x00000210a54e0000 WatcherThread [stack: 0x000000ceb6a00000,0x000000ceb6b00000] [id=896]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x00000000a0c00000, size: 1524 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 28672K, used 10464K [0x00000000e0400000, 0x00000000e2400000, 0x0000000100000000)
+  eden space 24576K, 42% used [0x00000000e0400000,0x00000000e0e382e0,0x00000000e1c00000)
+  from space 4096K, 0% used [0x00000000e2000000,0x00000000e2000000,0x00000000e2400000)
+  to   space 4096K, 0% used [0x00000000e1c00000,0x00000000e1c00000,0x00000000e2000000)
+ ParOldGen       total 65536K, used 0K [0x00000000a0c00000, 0x00000000a4c00000, 0x00000000e0400000)
+  object space 65536K, 0% used [0x00000000a0c00000,0x00000000a0c00000,0x00000000a4c00000)
+ Metaspace       used 6408K, capacity 6626K, committed 6784K, reserved 1056768K
+  class space    used 708K, capacity 790K, committed 896K, reserved 1048576K
+
+Card table byte_map: [0x000002109fe80000,0x00000210a0180000] byte_map_base: 0x000002109f97a000
+
+Marking Bits: (ParMarkBitMap*) 0x00000000534a6850
+ Begin Bits: [0x00000210a0380000, 0x00000210a1b50000)
+ End Bits:   [0x00000210a1b50000, 0x00000210a3320000)
+
+Polling page: 0x000002108f0c0000
+
+CodeCache: size=245760Kb used=2142Kb max_used=2142Kb free=243617Kb
+ bounds [0x0000021090ac0000, 0x0000021090d30000, 0x000002109fac0000]
+ total_blobs=835 nmethods=489 adapters=260
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5.240 Thread 0x00000210a5447000  484       1       java.util.Formatter$Flags::valueOf (5 bytes)
+Event: 5.241 Thread 0x00000210a5447000 nmethod 484 0x0000021090cd6210 code [0x0000021090cd6360, 0x0000021090cd6478]
+Event: 5.246 Thread 0x00000210a5447000  485       3       sun.net.util.IPAddressUtil::scan (92 bytes)
+Event: 5.247 Thread 0x00000210a5447000 nmethod 485 0x0000021090cd64d0 code [0x0000021090cd66a0, 0x0000021090cd6ed0]
+Event: 5.248 Thread 0x00000210a5447000  486       3       sun.misc.URLClassPath::getResource (83 bytes)
+Event: 5.248 Thread 0x00000210a5447000 nmethod 486 0x0000021090cd7410 code [0x0000021090cd75a0, 0x0000021090cd7970]
+Event: 5.251 Thread 0x00000210a5447000  487       3       java.lang.Integer::toUnsignedLong (7 bytes)
+Event: 5.251 Thread 0x00000210a5447000 nmethod 487 0x0000021090cd7ed0 code [0x0000021090cd8020, 0x0000021090cd8178]
+Event: 5.251 Thread 0x00000210a5447000  489       3       org.lwjgl.system.MemoryUtil::memPutAddress (29 bytes)
+Event: 5.251 Thread 0x00000210a5447000 nmethod 489 0x0000021090cd8210 code [0x0000021090cd8360, 0x0000021090cd84d8]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 1.020 Thread 0x00000210a4681800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e085d298) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jvm.cpp, line 1524]
+Event: 4.981 Thread 0x000002108f128800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000e0a524c8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\methodHandles.cpp, line 1194]
+Event: 4.988 Thread 0x000002108f128800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000e0a5fff8) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\methodHandles.cpp, line 1194]
+Event: 5.065 Thread 0x000002108f128800 Exception <a 'java/lang/NoSuchMethodError': java.lang.Object.lambda$static$0(Ljava/lang/String;)Ljava/lang/Boolean;> (0x00000000e0ba1688) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\interpreter\lin
+Event: 5.135 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0c78bf0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 5.136 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0c7a6e0) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 5.165 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0cd6260) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 5.165 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0cd6998) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 5.171 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0ce4740) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+Event: 5.171 Thread 0x000002108f128800 Exception <a 'sun/nio/fs/WindowsException'> (0x00000000e0ce4d30) thrown at [C:\wsjdk\Corretto8Src\installers\windows\zip\corretto-build\buildRoot\hotspot\src\share\vm\prims\jni.cpp, line 711]
+
+Events (10 events):
+Event: 5.240 loading class org/lwjgl/system/MemoryManage$StdlibAllocator
+Event: 5.240 loading class org/lwjgl/system/MemoryManage$StdlibAllocator done
+Event: 5.242 loading class org/lwjgl/system/MemoryManage$DebugAllocator
+Event: 5.242 loading class org/lwjgl/system/MemoryManage$DebugAllocator done
+Event: 5.244 loading class org/lwjgl/system/libc/LibCStdlib
+Event: 5.244 loading class org/lwjgl/system/libc/LibCStdlib done
+Event: 5.246 loading class org/lwjgl/opengl/GL$1
+Event: 5.246 loading class org/lwjgl/opengl/GL$1 done
+Event: 5.247 loading class org/lwjgl/system/SharedLibrary$Delegate
+Event: 5.247 loading class org/lwjgl/system/SharedLibrary$Delegate done
+
+
+Dynamic libraries:
+0x00007ff7fb220000 - 0x00007ff7fb25a000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\bin\java.exe
+0x00007fff2b690000 - 0x00007fff2b888000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007fff2b150000 - 0x00007fff2b20f000 	C:\Windows\System32\KERNEL32.DLL
+0x00007fff29120000 - 0x00007fff293f2000 	C:\Windows\System32\KERNELBASE.dll
+0x00007fff299c0000 - 0x00007fff29a6e000 	C:\Windows\System32\ADVAPI32.dll
+0x00007fff2b430000 - 0x00007fff2b4ce000 	C:\Windows\System32\msvcrt.dll
+0x00007fff2b4d0000 - 0x00007fff2b56c000 	C:\Windows\System32\sechost.dll
+0x00007fff2a060000 - 0x00007fff2a185000 	C:\Windows\System32\RPCRT4.dll
+0x00007fff29c70000 - 0x00007fff29e11000 	C:\Windows\System32\USER32.dll
+0x00007fff296a0000 - 0x00007fff296c2000 	C:\Windows\System32\win32u.dll
+0x00007fff29e20000 - 0x00007fff29e4b000 	C:\Windows\System32\GDI32.dll
+0x00007fff29400000 - 0x00007fff2950f000 	C:\Windows\System32\gdi32full.dll
+0x00007fff29080000 - 0x00007fff2911d000 	C:\Windows\System32\msvcp_win.dll
+0x00007fff28f80000 - 0x00007fff29080000 	C:\Windows\System32\ucrtbase.dll
+0x00007fff1bcf0000 - 0x00007fff1bf8a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007fff2b3f0000 - 0x00007fff2b422000 	C:\Windows\System32\IMM32.DLL
+0x00007fff0ff10000 - 0x00007fff0ffff000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\msvcr120.dll
+0x00007fff24ab0000 - 0x00007fff24b56000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\msvcp120.dll
+0x0000000052cb0000 - 0x0000000053525000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\server\jvm.dll
+0x00007fff2b0d0000 - 0x00007fff2b0d8000 	C:\Windows\System32\PSAPI.DLL
+0x00007fff18cb0000 - 0x00007fff18cb9000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007fff29ff0000 - 0x00007fff2a05b000 	C:\Windows\System32\WS2_32.dll
+0x00007fff20e20000 - 0x00007fff20e47000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007fff23e40000 - 0x00007fff23e4a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007fff24be0000 - 0x00007fff24bef000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\verify.dll
+0x00007fff18d90000 - 0x00007fff18db9000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\java.dll
+0x00007fff18090000 - 0x00007fff180ba000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\instrument.dll
+0x00007fff24480000 - 0x00007fff24496000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\zip.dll
+0x00007fff2a510000 - 0x00007fff2ac55000 	C:\Windows\System32\SHELL32.dll
+0x00007fff26e60000 - 0x00007fff275f2000 	C:\Windows\SYSTEM32\windows.storage.dll
+0x00007fff2a1b0000 - 0x00007fff2a505000 	C:\Windows\System32\combase.dll
+0x00007fff28700000 - 0x00007fff28730000 	C:\Windows\SYSTEM32\Wldp.dll
+0x00007fff296d0000 - 0x00007fff2977d000 	C:\Windows\System32\SHCORE.dll
+0x00007fff2b0f0000 - 0x00007fff2b145000 	C:\Windows\System32\shlwapi.dll
+0x00007fff28cc0000 - 0x00007fff28cdf000 	C:\Windows\SYSTEM32\profapi.dll
+0x00007fff24330000 - 0x00007fff2434a000 	C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2\bin\breakgen64.dll
+0x00007fff15170000 - 0x00007fff1518a000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\net.dll
+0x00007fff28460000 - 0x00007fff284ca000 	C:\Windows\system32\mswsock.dll
+0x00007fff12810000 - 0x00007fff12822000 	C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\bin\nio.dll
+0x00007fff0ee80000 - 0x00007fff0eef5000 	C:\Users\Umnik\AppData\Local\Temp\lwjglUmnik\3.3.1-build-7\lwjgl.dll
+0x00007fff0ba30000 - 0x00007fff0ba8d000 	C:\Users\Umnik\AppData\Local\Temp\lwjglUmnik\3.3.1-build-7\lwjgl_opengl.dll
+0x00007fff0c740000 - 0x00007fff0c865000 	C:\Windows\SYSTEM32\opengl32.dll
+0x00007fff123f0000 - 0x00007fff1241c000 	C:\Windows\SYSTEM32\GLU32.dll
+0x00007fff23500000 - 0x00007fff236e4000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x00007fff28d80000 - 0x00007fff28e02000 	C:\Windows\System32\bcryptPrimitives.dll
+
+VM Arguments:
+jvm_args: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2\lib\idea_rt.jar=65242:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2\bin -Dfile.encoding=UTF-8 
+java_command: Main
+java_class_path (initial): C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\charsets.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\access-bridge-64.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\cldrdata.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\dnsns.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\jaccess.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\jfxrt.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\localedata.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\nashorn.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\sunec.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\sunjce_provider.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\sunmscapi.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\sunpkcs11.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\ext\zipfs.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\jce.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\jfr.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\jfxswt.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\jsse.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\management-agent.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\resources.jar;C:\Users\Umnik\.jdks\corretto-1.8.0_342-1\jre\lib\rt.jar;C:\Users\Umnik\IdeaProjects\GameEngine\out\production\GameEngine;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-par.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-stb.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-bgfx.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-glfw.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-assimp.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-nanovg.jar;C:\Users\Umnik\Desktop\JavaLib\lwjgl-release-3.3.1-custom\lwjgl-openal.jar;C:\Users\Umnik\Desktop\
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\BellSoft\LibericaJDK-8-Full\
+PATH=C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files\BellSoft\LibericaJDK-8-Full\bin\;C:\Program Files\BellSoft\LibericaJDK-8\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Users\Umnik\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Umnik\AppData\Local\Programs\Python\Python310\;C:\Users\Umnik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.3\bin;C:\Users\Umnik\AppData\Local\GitHubDesktop\bin;C:\Users\Umnik\AppData\Local\Programs\Microsoft VS Code\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Users\Umnik\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\Umnik\AppData\Local\Programs\Python\Python310\;C:\Users\Umnik\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.2\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.3\bin;;C:\Users\Umnik\AppData\Local\GitHubDesktop\bin;C:\Program Files\Inkscape\bin;C:\Program Files\BellSoft\LibericaJDK-8-Full\bin;C:\Users\Umnik\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=Umnik
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.2546)
+
+CPU:total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 23 model 24 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv, bmi1
+
+Memory: 4k page, physical 6238840k(1286284k free), swap 9777784k(3068620k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.342-b07) for windows-amd64 JRE (1.8.0_342-b07), built on Jul 21 2022 18:16:14 by "Administrator" with MS VC++ 12.0 (VS2013)
+
+time: Sun Mar 05 13:52:53 2023
+timezone: RTZ 2 (зима)
+elapsed time: 5.271643 seconds (0d 0h 0m 5s)
+
